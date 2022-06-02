@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chapter_8_allminitask">
         <activity
+            android:name=".MainCompose"
+            android:exported="false"
+            android:label="@string/title_activity_main_compose"
+            android:theme="@style/Theme.Chapter_8_allminitask" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
