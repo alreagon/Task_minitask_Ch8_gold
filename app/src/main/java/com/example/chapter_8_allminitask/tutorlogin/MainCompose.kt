@@ -10,6 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.chapter_8_allminitask.tutorlogin.ui.LoginHomeScreen
 import com.example.chapter_8_allminitask.ui.theme.Chapter_8_allminitaskTheme
 
 class MainCompose : ComponentActivity() {
@@ -22,7 +23,8 @@ class MainCompose : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting2("Android")
+//                    Greeting2("Android")
+                    LoginHomeScreen()
                 }
             }
         }

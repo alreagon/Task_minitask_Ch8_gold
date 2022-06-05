@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chapter_8_allminitask">
         <activity
-            android:name=".MainCompose"
+            android:name=".tutorlogin.MainCompose"
             android:exported="false"
             android:label="@string/title_activity_main_compose"
             android:theme="@style/Theme.Chapter_8_allminitask" />
