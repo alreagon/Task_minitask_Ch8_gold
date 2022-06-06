@@ -6,6 +6,7 @@ import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.chapter_8_allminitask.databinding.ActivityMainBinding
+import com.example.chapter_8_allminitask.philippcourse.MainPhilippCourse
 import com.example.chapter_8_allminitask.tutorlogin.MainCompose
 
 class MainActivity : AppCompatActivity() {
@@ -46,7 +47,18 @@ class MainActivity : AppCompatActivity() {
                 ).show()
                 true
             }
-
+            jpcompPhilippLackner.setOnClickListener {
+                val intent = Intent(this@MainActivity, MainPhilippCourse::class.java)
+                startActivity(intent)
+            }
+            jpcompPhilippLackner.setOnLongClickListener {
+                Toast.makeText(
+                    this@MainActivity,
+                    "JPCompose course from Philipp Lacker yt",
+                    Toast.LENGTH_SHORT
+                ).show()
+                true
+            }
 
         }
 

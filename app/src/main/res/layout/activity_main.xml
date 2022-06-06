@@ -38,6 +38,17 @@
             android:textAllCaps="false"
             android:textColor="@color/black" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/jpcompPhilippLackner"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/batenmain"
+            android:elevation="20dp"
+            android:text="Tutor PhilippLackner"
+            android:textAllCaps="false"
+            android:textColor="@color/black" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

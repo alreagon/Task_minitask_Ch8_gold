@@ -14,6 +14,8 @@
             android:exported="false"
             android:label="@string/title_activity_main_compose"
             android:theme="@style/Theme.Chapter_8_allminitask" />
+
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -23,6 +25,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".philippcourse.MainPhilippCourse"
+            android:exported="false" />
+        <activity
+            android:name=".philippcourse.Eps1"
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -303,6 +303,7 @@ fun SignUpPageScreen() {
             Spacer(modifier = Modifier.size(16.dp))
 
             Row(
+                verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier
                     .wrapContentHeight(align = Alignment.CenterVertically)
                     .padding(horizontal = 16.dp)
@@ -312,8 +313,7 @@ fun SignUpPageScreen() {
                     checked = signUpState.checked,
                     onCheckedChange = { signUpState.checkedChange(it) })
                 Spacer(modifier = Modifier.size(4.dp))
-                Text(text = "Agree with privacy police", style = TextStyle(textAlign = TextAlign.Center))
-
+                Text(text = "Agree with privacy police")
             }
 
             Spacer(modifier = Modifier.size(8.dp))
