@@ -1,6 +1,9 @@
 package com.example.chapter_8_allminitask.tutorlogin.ui
 
+import android.content.Intent
+import android.os.Bundle
 import android.widget.Space
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -15,6 +18,7 @@ import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.center
 import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -26,9 +30,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.chapter_8_allminitask.R
+import com.example.chapter_8_allminitask.philippcourse.Eps1
 import com.example.chapter_8_allminitask.ui.theme.Gold
 
-
+class LoginUi : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
+}
 @Composable
 fun LoginHomeScreen() {
 //    LoginPageScreen()
@@ -231,6 +240,8 @@ fun LoginPageScreen() {
 
 @Composable
 fun SignUpPageScreen() {
+
+    val context = LocalContext.current
     val signUpState = SignUpState()
     Surface(
         color = MaterialTheme.colors.primaryVariant,
@@ -338,6 +349,7 @@ fun SignUpPageScreen() {
                 Text(
                     text = "Sign in", modifier = Modifier.clickable {
 
+                        context.startActivity(Intent(context, LoginUi::class.java ))
                     },
                     color = MaterialTheme.colors.primary
                 )
@@ -352,6 +364,8 @@ fun SignUpPageScreen() {
 @Composable
 fun LandingPagePrev() {
 
+//    LoginPageScreen()
+//    SignUpPageScreen()
     SignUpPageScreen()
 
 }

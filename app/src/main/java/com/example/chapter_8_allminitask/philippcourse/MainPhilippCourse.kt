@@ -6,33 +6,34 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.foundation.*
-import androidx.compose.foundation.gestures.detectTapGestures
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Shape
-import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 class MainPhilippCourse : AppCompatActivity() {
+    @OptIn(ExperimentalFoundationApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
 //            MainContent()
-        ToastDemo()
+//        ToastDemo()
+            ManggilButton()
         }
-
     }
 }
 
@@ -61,14 +62,16 @@ fun ToastDemo() {
 //    Toast.makeText(context, "This is a Sample Toast", Toast.LENGTH_LONG).show()
 //}
 
-@OptIn(ExperimentalFoundationApi::class)
+@ExperimentalFoundationApi
 @Composable
 fun MainContent() {
 
     val context = LocalContext.current
     val scrollState = rememberScrollState()
     Column(
+
         modifier = Modifier
+            .background(color = MaterialTheme.colors.primary)
             .fillMaxSize()
             .verticalScroll(state = scrollState),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -78,23 +81,88 @@ fun MainContent() {
             onClick = {
                 context.startActivity(Intent(context, Eps1::class.java))
             },
-            modifier = Modifier
-//                .pointerInput(Unit) {
-//                    detectTapGestures(
-//                        onLongPress = {},
-//                    )
-//                }
-                .combinedClickable(
-                    onClick = {
-                        context.startActivity(Intent(context, Eps1::class.java))
-                    },
-                    onLongClick = {
-                        Toast.makeText(context, "Toast ini bang", Toast.LENGTH_SHORT).show()
-                    }),
+
+            shape = RoundedCornerShape(12.dp),
+            modifier = Modifier,
+//                .clickable(
+//                    onClick = {
+//                        println("Single Click")
+//                    }
+//                    onLongClick = {
+//                        println("Long Click")
+//                    },
+//                    onDoubleClick = {
+//                        println("Double Tap")
+//                    },
+//                )
+//                .combinedClickable(
+//                    onClick = {
+//                        context.startActivity(Intent(context, Eps1::class.java))
+//                    },
+//                    onLongClick = {
+//                        Toast.makeText(context, "Toast ini bang", Toast.LENGTH_SHORT).show()
+//                    })
             colors = ButtonDefaults.buttonColors(backgroundColor = Color(0XFF0F9D58)),
         ) {
             Text("Episode pertama", color = Color.White)
         }
+    }
+}
+
+@Preview (showBackground = true)
+@Composable
+fun PrevManggilBUtton() {
+    ManggilButton()
+}
+
+@Composable
+fun ManggilButton(context: Context = LocalContext.current) {
+    val scrollState = rememberScrollState()
+    Column(
+        modifier = Modifier
+            .background(color = MaterialTheme.colors.background)
+            .fillMaxSize()
+            .verticalScroll(state = scrollState),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
+    ) {
+        // Button Eps 1
+        ButtonComponent(
+            context = context,
+            intent = Intent(context, Eps1::class.java),
+            buttonText = "Episode pertama!"
+        )
+        // Button Eps 3
+        ButtonComponent(
+            context = context,
+            intent = Intent(context, Eps3::class.java),
+            buttonText = "Episode Ketiga!"
+        )
+
+
+    }
+
+}
+
+@Composable
+fun ButtonComponent(context: Context, intent: Intent, buttonText: String) {
+    Button(
+        onClick = {
+            context.startActivity(intent)
+        },
+        modifier = Modifier
+            .padding(16.dp)
+            .width(200.dp),
+        shape = RoundedCornerShape(12.dp),
+    ) {
+        Text(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(8.dp),
+            text = buttonText,
+            textAlign = TextAlign.Center,
+            color = Color.White
+        )
     }
 }
 
