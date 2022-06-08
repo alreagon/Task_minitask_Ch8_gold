@@ -120,7 +120,7 @@ fun ManggilButton(context: Context = LocalContext.current) {
     val scrollState = rememberScrollState()
     Column(
         modifier = Modifier
-            .background(color = MaterialTheme.colors.background)
+            .background(color = MaterialTheme.colors.background) //ini make bg lightwhite
             .fillMaxSize()
             .verticalScroll(state = scrollState),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -137,6 +137,20 @@ fun ManggilButton(context: Context = LocalContext.current) {
             context = context,
             intent = Intent(context, Eps3::class.java),
             buttonText = "Episode Ketiga!"
+        )
+
+        // Button Eps 9
+        ButtonComponent(
+            context = context,
+            intent = Intent(context, Eps9::class.java),
+            buttonText = "Episode Sembilan!"
+        )
+
+        // SplashScreen
+        ButtonComponent(
+            context = context,
+            intent = Intent(context, SplashScreen::class.java),
+            buttonText = "SplashScreen"
         )
 
 

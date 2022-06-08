@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.chapter_8_allminitask.databinding.ActivityMainBinding
 import com.example.chapter_8_allminitask.philippcourse.MainPhilippCourse
 import com.example.chapter_8_allminitask.tutorlogin.MainCompose
+import com.example.chapter_8_allminitask.tutorlogin.ui.SignUpUi
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -36,7 +37,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             jpcLoginTutor.setOnClickListener {
-                val intent = Intent(this@MainActivity, MainCompose::class.java)
+                val intent = Intent(this@MainActivity, SignUpUi::class.java)
                 startActivity(intent)
             }
             jpcLoginTutor.setOnLongClickListener {

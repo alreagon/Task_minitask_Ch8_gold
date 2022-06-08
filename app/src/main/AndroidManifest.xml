@@ -10,6 +10,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chapter_8_allminitask">
         <activity
+            android:name=".philippcourse.SplashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".latihan.LoginLatihan"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".philippcourse.Eps9"
+            android:exported="false" />
+        <activity
             android:name=".tutorlogin.ui.SignUpUi"
             android:exported="false" />
         <activity
@@ -35,8 +56,9 @@
         <activity
             android:name=".tutorlogin.ui.LoginUi"
             android:exported="false" />
-        <activity android:name=".philippcourse.Eps3"
-            android:exported="false"/>
+        <activity
+            android:name=".philippcourse.Eps3"
+            android:exported="false" />
     </application>
 
 </manifest>
